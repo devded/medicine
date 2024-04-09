@@ -20,5 +20,5 @@ async def read_companies():
 @router.get("/{company_id}")
 async def read_company(company_id: str):
     db = SessionLocal()
-    company = db.query(CompanyName).filter(CompanyName.brand_id == company_id).first()
+    company = db.query(CompanyName).filter(CompanyName.company_id == company_id).first()
     return company
