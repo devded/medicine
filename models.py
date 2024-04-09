@@ -1,10 +1,10 @@
-from sqlalchemy import Column, Integer, String, create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy import Column, String
+
 from database import Base
 
+
 class Brand(Base):
-    __tablename__ = 'brand'
+    __tablename__ = "brand"
 
     brand_id = Column(String, primary_key=True)
     generic_id = Column(String)
@@ -17,7 +17,7 @@ class Brand(Base):
 
 
 class CompanyName(Base):
-    __tablename__ = 'company_name'
+    __tablename__ = "company_name"
 
     company_id = Column(String, primary_key=True)
     company_name = Column(String)
@@ -25,7 +25,7 @@ class CompanyName(Base):
 
 
 class Generic(Base):
-    __tablename__ = 'generic'
+    __tablename__ = "generic"
 
     generic_id = Column(String, primary_key=True)
     generic_name = Column(String)

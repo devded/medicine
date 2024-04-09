@@ -1,8 +1,10 @@
 import uvicorn
 from fastapi import FastAPI
-from routers import generic, brand, company
+
 import models
-from database import SessionLocal, engine
+from database import engine
+from routers import brand, company, generic
+
 models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
 app.include_router(generic.router)
@@ -47,6 +49,5 @@ app.include_router(company.router)
 # 	return company
 
 
-
 if __name__ == "__main__":
-	uvicorn.run(app)
+    uvicorn.run(app)
