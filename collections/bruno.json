@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "BD Medicine Info",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
