@@ -1,8 +1,7 @@
-import uvicorn
-from fastapi import FastAPI
-
 import models
+import uvicorn
 from database import engine
+from fastapi import FastAPI
 from routers import brand, company, generic
 
 models.Base.metadata.create_all(bind=engine)

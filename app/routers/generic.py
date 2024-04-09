@@ -1,7 +1,6 @@
-from fastapi import APIRouter
-
 import models
 from database import SessionLocal
+from fastapi import APIRouter
 
 router = APIRouter(
     prefix="/generic",

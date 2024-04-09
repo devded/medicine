@@ -1,6 +1,5 @@
-from sqlalchemy import Column, String
-
 from database import Base
+from sqlalchemy import Column, String
 
 
 class Brand(Base):

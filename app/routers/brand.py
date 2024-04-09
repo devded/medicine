@@ -1,6 +1,5 @@
-from fastapi import APIRouter
-
 from database import SessionLocal
+from fastapi import APIRouter
 from models import Brand
 
 router = APIRouter(
