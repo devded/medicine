@@ -1,26 +1,25 @@
 import uvicorn
 from fastapi import FastAPI
-# from sqlalchemy import Column, Integer, String, create_engine
-# from sqlalchemy.ext.declarative import declarative_base
-# from sqlalchemy.orm import sessionmaker
-
+from routers import generic, brand, company
 import models
 from database import SessionLocal, engine
 models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
-
+app.include_router(generic.router)
+app.include_router(brand.router)
+app.include_router(company.router)
 
 
 # CRUD operations
 # Create (Create)
 
 
-# Read (GET)
-@app.get("/generic/{generic_id}")
-async def read_generic(generic_id: str):
-	db = SessionLocal()
-	generic = db.query(models.Generic).filter(models.Generic.generic_id == generic_id).first()
-	return generic
+# # Read (GET)
+# @app.get("/generic/{generic_id}")
+# async def read_generic(generic_id: str):
+# 	db = SessionLocal()
+# 	generic = db.query(models.Generic).filter(models.Generic.generic_id == generic_id).first()
+# 	return generic
 
 
 # @app.get("/brands")
